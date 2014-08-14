@@ -56,8 +56,9 @@ Install the package:: bash
 **DO NOT ADD TO PRODUCTION SETTINGS.PY** - anyone could reset
 your database by visiting the reset url.
 
-You almost certainly want to add the app and middleware to a custom test-only settings.py file; something like 
-``settings_test.py``:: python
+You almost certainly want to add the app and middleware to a custom test-only settings.py file; something like ``settings_test.py``:
+
+.. code:: python
 
     from .settings import *
 
@@ -83,7 +84,9 @@ Custom serverside setUp and tearDown
 """"""""""""""""""""""""""""""""""""
 You can set custom ``setUp`` and `tearDown`` methods by
 subclassing ``ApiTestMiddleware`` and creating bound methods
-of those names. They are both passed the request object:: python
+of those names. They are both passed the request object:
+
+.. code:: python
 
     from api_test.middleware.api_test import ApiTestMiddleware
 
@@ -106,7 +109,9 @@ make a ``GET`` to the reset endpoint (defaults to
 
 Run your full-stack tests
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-First start your test server:: bash
+First start your test server:
+
+.. code:: bash
 
     python ./manage.py api_test_server --settings "path.to.settings_test"
 
@@ -120,7 +125,9 @@ test server port.
 
 Testing
 -------
-run::
+run:
+
+.. code:: bash
 
     python setup.py test
 
